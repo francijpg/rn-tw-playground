@@ -1,29 +1,31 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, TouchableHighlight, View} from 'react-native';
-import {Button as AtomButton} from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import { Button as AtomButton } from 'react-native';
+import Link from '../../../components/Link';
 import TextInput from '../../../components/TextInput';
 
 const Login = () => {
-  const [email, setEmail] = useState({value: '', error: ''});
-  const [password, setPassword] = useState({value: '', error: ''});
+  const [email, setEmail] = useState({ value: '', error: '' });
+  const [password, setPassword] = useState({ value: '', error: '' });
 
   return (
     <View style={styles.bg}>
       <AtomButton title="login" />
       <TextInput
         value={email.value}
-        onChangeText={text => setEmail({value: text, error: ''})}
+        onChangeText={text => setEmail({ value: text, error: '' })}
         placeholder="Email"
         autoCapitalize="none"
       />
       <TextInput
         value={password.value}
-        onChangeText={text => setPassword({value: text, error: ''})}
+        onChangeText={text => setPassword({ value: text, error: '' })}
         placeholder="Password"
         autoCapitalize="none"
         secureTextEntry
       />
       <View>
+        <Link></Link>
         <TouchableHighlight style={styles.btnDelete}>
           <Text style={styles.textDelete}> Delete &times; </Text>
         </TouchableHighlight>
