@@ -6,8 +6,11 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --ignore-path .gitignore",
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(tsx)\"",
+    "lint:force": "eslint --ignore-path .gitignore \"{src,domain,test}/**/*.{js,jsx,ts,tsx}\" --fix",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "prettier": "^2.6.2",
