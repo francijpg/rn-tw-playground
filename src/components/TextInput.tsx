@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, { memo, FC } from 'react';
 import {
   StyleSheet,
   // Text,
@@ -12,7 +12,7 @@ import {
 //   errorText?: string;
 // };
 
-const TextInput: FC<TextInputProps> = ({...props}) => {
+const TextInput: FC<TextInputProps> = ({ ...props }) => {
   return (
     <View style={styles.container}>
       <RnTextInput {...props} style={[styles.input, props.style]} />
@@ -26,12 +26,17 @@ const styles = StyleSheet.create({
     width: '100%',
     marginVertical: 12,
   },
+  icon: {
+    padding: 10,
+  },
   input: {
     height: 40,
     margin: 12,
     borderWidth: 1,
     padding: 10,
     backgroundColor: '#F0FFFF',
+    borderRadius: 15,
+    borderColor: 'hsl(212, 33%, 60%)',
   },
   error: {
     fontSize: 14,
@@ -41,4 +46,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TextInput;
+export default memo(TextInput);
