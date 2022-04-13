@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 // import { Button as AtomButton } from 'react-native';
-import Link from '../../../components/Link';
 import TextInput from '../../../components/TextInput';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Link from '../../../components/Link';
 
 const Login = () => {
   const [email, setEmail] = useState({ value: '', error: '' });
