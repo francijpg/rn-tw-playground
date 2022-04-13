@@ -1,24 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, Text, TouchableHighlight, View} from 'react-native';
-// import Buttom from '../../../components/Buttom';
 import {Button as AtomButton} from 'react-native';
+import TextInput from '../../../components/TextInput';
 
-const Login = (item: any) => {
+const Login = () => {
+  const [email, setEmail] = useState({value: '', error: ''});
+  const [password, setPassword] = useState({value: '', error: ''});
+
   return (
-    <View style={styles.appointment}>
-      <View>
-        <Text style={styles.label}>Patient: </Text>
-        <Text style={styles.text}>{item.patient}</Text>
-      </View>
-      <View>
-        <Text style={styles.label}>Owner: </Text>
-        <Text style={styles.text}>{item.owner}</Text>
-      </View>
-      <View>
-        <Text style={styles.label}>Symptoms: </Text>
-        <Text style={styles.text}>{item.symptom}</Text>
-      </View>
+    <View style={styles.bg}>
       <AtomButton title="login" />
+      <TextInput
+        value={email.value}
+        onChangeText={text => setEmail({value: text, error: ''})}
+        placeholder="Email"
+        autoCapitalize="none"
+      />
+      <TextInput
+        value={password.value}
+        onChangeText={text => setPassword({value: text, error: ''})}
+        placeholder="Password"
+        autoCapitalize="none"
+        secureTextEntry
+      />
       <View>
         <TouchableHighlight style={styles.btnDelete}>
           <Text style={styles.textDelete}> Delete &times; </Text>
@@ -29,7 +33,7 @@ const Login = (item: any) => {
 };
 
 const styles = StyleSheet.create({
-  appointment: {
+  bg: {
     backgroundColor: '#FFF',
     borderBottomColor: '#e1e1e1',
     borderStyle: 'solid',
