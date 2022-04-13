@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
-import { Button as AtomButton } from 'react-native';
-import Link from '../../../components/Link';
+// import { Button as AtomButton } from 'react-native';
 import TextInput from '../../../components/TextInput';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import Link from '../../../components/Link';
 
 const Login = () => {
   const [email, setEmail] = useState({ value: '', error: '' });
@@ -10,7 +11,7 @@ const Login = () => {
 
   return (
     <View style={styles.bg}>
-      <AtomButton title="login" />
+      {/* <AtomButton title="login" /> */}
       <TextInput
         value={email.value}
         onChangeText={text => setEmail({ value: text, error: '' })}
@@ -24,8 +25,16 @@ const Login = () => {
         autoCapitalize="none"
         secureTextEntry
       />
+      <Icon name="rocket" size={30} color="#900" />
+      <Icon name="rocket" size={30} color="#900" />
+      <Icon name="rocket" size={30} color="#900" />
+      <Icon.Button name="facebook" backgroundColor="#3b5998">
+        <Text style={{ fontFamily: 'Arial', fontSize: 15 }}>
+          Login with Facebook
+        </Text>
+      </Icon.Button>
       <View>
-        <Link></Link>
+        <Link />
         <TouchableHighlight style={styles.btnDelete}>
           <Text style={styles.textDelete}> Delete &times; </Text>
         </TouchableHighlight>

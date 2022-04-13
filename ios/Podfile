@@ -5,8 +5,8 @@ platform :ios, '11.0'
 install! 'cocoapods', :deterministic_uuids => false
 
 target 'twplayground' do
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
   config = use_native_modules!
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   # Flags change depending on the env values.
   flags = get_default_flags()

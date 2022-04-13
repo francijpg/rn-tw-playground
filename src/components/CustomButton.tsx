@@ -1,5 +1,5 @@
-import React, {FC} from 'react';
-import {Platform, Pressable, StyleSheet, Text} from 'react-native';
+import React, { FC } from 'react';
+import { Platform, Pressable, StyleSheet, Text } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 interface ButtonProps {
@@ -9,7 +9,7 @@ interface ButtonProps {
 }
 const PLATFORM_IOS = 'ios';
 
-const CustomButton: FC<ButtonProps> = ({texto}) => {
+const CustomButton: FC<ButtonProps> = ({ texto }) => {
   return (
     <Pressable style={styles.button}>
       <Text style={styles.text}>{texto}</Text>
