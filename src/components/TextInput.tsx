@@ -26,9 +26,9 @@ const styles = StyleSheet.create({
     width: '100%',
     marginVertical: 12,
   },
-  icon: {
-    padding: 10,
-  },
+  // icon: {
+  //   padding: 10,
+  // },
   input: {
     height: 40,
     margin: 12,
@@ -38,12 +38,12 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     borderColor: 'hsl(212, 33%, 60%)',
   },
-  error: {
-    fontSize: 14,
-    color: '#FF6347',
-    paddingHorizontal: 4,
-    paddingTop: 4,
-  },
+  // error: {
+  //   fontSize: 14,
+  //   color: '#FF6347',
+  //   paddingHorizontal: 4,
+  //   paddingTop: 4,
+  // },
 });
 
 export default memo(TextInput);
