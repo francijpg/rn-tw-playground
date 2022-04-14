@@ -8,6 +8,8 @@ import Link from '../../../components/Link';
 const Login = () => {
   const [email, setEmail] = useState({ value: '', error: '' });
   const [password, setPassword] = useState({ value: '', error: '' });
+  const URL = 'https://google.com';
+  const FORGOT_PASS = 'Olvidaste tu password?';
 
   return (
     <View style={styles.bg}>
@@ -34,7 +36,7 @@ const Login = () => {
         </Text>
       </Icon.Button>
       <View>
-        <Link />
+        <Link url={URL} text={FORGOT_PASS} />
         <TouchableHighlight style={styles.btnDelete}>
           <Text style={styles.textDelete}> Delete &times; </Text>
         </TouchableHighlight>
