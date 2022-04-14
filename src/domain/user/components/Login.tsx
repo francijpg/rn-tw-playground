@@ -7,6 +7,8 @@ import TextInputIcon from '../../../components/TextInputIcon';
 const Login = () => {
   const [email, setEmail] = useState({ value: '', error: '' });
   const [password, setPassword] = useState({ value: '', error: '' });
+  const URL = 'https://google.com';
+  const FORGOT_PASS = 'Olvidaste tu password?';
 
   return (
     <View style={styles.container}>
@@ -28,7 +30,7 @@ const Login = () => {
         maxLength={20}
       />
       <View>
-        <Link />
+        <Link url={URL} text={FORGOT_PASS} />
         <CustomButton texto={'Buttom'} />
       </View>
     </View>

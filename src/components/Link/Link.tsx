@@ -1,14 +1,23 @@
-import React from 'react';
-import { Linking, Text } from 'react-native';
+import React, { FC } from 'react';
+import { Linking, Text, StyleSheet } from 'react-native';
 
-const Link = () => {
+interface LinkProps {
+  text: String;
+  url: string;
+}
+
+const Link: FC<LinkProps> = ({ text, url }) => {
   return (
-    <Text
-      style={{ color: '#FF6584' }}
-      onPress={() => Linking.openURL('http://google.com')}>
-      Olvidaste tu password?
+    <Text style={styles.link} onPress={() => Linking.openURL(url)}>
+      {text}
     </Text>
   );
 };
+
+const styles = StyleSheet.create({
+  link: {
+    color: '#FF6584',
+  },
+});
 
 export default Link;
