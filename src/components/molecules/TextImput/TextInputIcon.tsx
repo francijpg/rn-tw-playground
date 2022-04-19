@@ -5,17 +5,17 @@ import {
   TextInputProps,
   View,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import Label from './Label';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Label from '../../atoms/Label/Label';
 
 type TextInputIconProps = TextInputProps & { icon: string; title: string };
 
 const TextInputIcon: FC<TextInputIconProps> = ({ icon, title, ...props }) => {
   return (
     <>
-      <Label>{title}</Label>
+      <Label style={styles.text}>{title}</Label>
       <View style={styles.container}>
-        <Icon name={icon} size={30} style={styles.icon} />
+        <Icon name={icon} size={20} style={styles.icon} />
         <Input {...props} style={[styles.input, props.style]} />
       </View>
     </>
@@ -23,6 +23,11 @@ const TextInputIcon: FC<TextInputIconProps> = ({ icon, title, ...props }) => {
 };
 
 const styles = StyleSheet.create({
+  text: {
+    fontWeight: 'bold',
+    marginTop: 15,
+    marginBottom: 10,
+  },
   container: {
     flexDirection: 'row',
     borderWidth: 1,
@@ -35,10 +40,12 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   icon: {
-    color: '#900',
-    padding: 5,
+    color: '#000000',
+    padding: 8,
     marginRight: 10,
-    marginLeft: 10,
+    marginLeft: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   input: {
     width: '100%',
