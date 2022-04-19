@@ -3,7 +3,7 @@ import { StyleSheet, Text } from 'react-native';
 
 type Props = {
   children: React.ReactNode;
-  style: Object;
+  style?: Object;
 };
 
 const Label = ({ children, style }: Props) => (

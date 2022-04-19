@@ -5,7 +5,7 @@ import { Colors } from '../../../../assets/colors';
 import { Strings } from '../../../../assets/string';
 import CustomButton from '../../../../components/molecules/CustomButton';
 import Link from '../../../../components/atoms/Link';
-import TextInputIcon from '../../../../components/molecules/TextImput/TextInputIcon';
+import TextInputIcon from '../../../../components/molecules/TextImputIcon/TextInputIcon';
 import dictionary from '../../../../language/es/login.json';
 import styles from './Login.style';
 import LoginHeader from '../../../../components/organisms/LoginHeader/LoginHeader';
