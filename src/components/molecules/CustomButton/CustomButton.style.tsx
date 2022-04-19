@@ -1,14 +1,17 @@
 import { Platform, StyleSheet } from 'react-native';
-import { Colors } from '../../assets/colors';
-import { PlatformStr } from '../../assets/string';
+import { Colors } from '../../../assets/colors';
+import { PlatformStr } from '../../../assets/string';
 
 const styles = (isPressed: boolean) =>
   StyleSheet.create({
+    container: {
+      borderRadius: 56,
+      overflow: 'hidden',
+    },
     button: {
       alignItems: 'center',
       justifyContent: 'center',
       paddingVertical: 15,
-      borderRadius: 56,
       elevation: 3,
       backgroundColor:
         Platform.OS === PlatformStr.IOS
