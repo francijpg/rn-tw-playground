@@ -1,5 +1,6 @@
-import React, { FC, Fragment } from 'react';
+import React, { FC } from 'react';
 import { Image, Text, ScrollView, View } from 'react-native';
+import Label from '../../../components/atoms/Label/Label';
 import { ApiDummyPhotos } from '../../../entities/ApiDummy';
 import styles from './ApiDummy.style';
 
@@ -10,21 +11,26 @@ type Props = {
 const ApiDummyList: FC<Props> = ({ photosArray }) => {
   return (
     <ScrollView>
-      <View style={styles.containerImage}>
-        {photosArray.map((photo, i) => (
-          <Fragment key={i}>
-            <Text>
+      {photosArray.map((photo, i) => (
+        <View key={i} style={styles.containerImage}>
+          <Image
+            style={styles.image}
+            source={{
+              uri: photo.thumbnailUrl,
+            }}
+          />
+          <View style={styles.cardContent}>
+            <Text style={styles.title}>
               {photo.id} | {photo.title}
             </Text>
-            <Image
-              style={styles.image}
-              source={{
-                uri: photo.thumbnailUrl,
-              }}
-            />
-          </Fragment>
-        ))}
-      </View>
+            <View style={styles.data}>
+              <Label>
+                source: <Text style={styles.source}>{photo.url}</Text>
+              </Label>
+            </View>
+          </View>
+        </View>
+      ))}
     </ScrollView>
   );
 };

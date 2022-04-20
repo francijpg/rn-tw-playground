@@ -1,15 +1,9 @@
 import React, { FC, useState } from 'react';
 import { Button, View } from 'react-native';
-
-import axios from 'axios';
 import ApiDummyList from './ApiDummyList';
 import { ApiDummyPhotos } from '../../../entities/ApiDummy';
 import styles from './ApiDummy.style';
-import { REACT_APP_DUMMY_API } from '@env';
-
-export const getPosts = async () => {
-  return await axios.get(`${REACT_APP_DUMMY_API}/albums/1/photos`);
-};
+import { getPhotos } from '../../../utils/apiDummy';
 
 type ApiDummyProps = {
   loginRequest: { email: string; password: string };
@@ -26,7 +20,7 @@ const ApiDummy: FC<ApiDummyProps> = ({
     return null;
   }
   const handleRequest = async () => {
-    const { data, status } = await getPosts();
+    const { data, status } = await getPhotos();
     if (status === 200) {
       setPhotos(data);
     }
