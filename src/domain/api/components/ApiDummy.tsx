@@ -4,6 +4,8 @@ import ApiDummyList from './ApiDummyList';
 import { ApiDummyPhotos } from '../../../entities/ApiDummy';
 import styles from './ApiDummy.style';
 import { getPhotos } from '../../../utils/apiDummy';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 type ApiDummyProps = {
   loginRequest: { email: string; password: string };
@@ -14,6 +16,7 @@ const ApiDummy: FC<ApiDummyProps> = ({
 }) => {
   const [photos, setPhotos] = useState<ApiDummyPhotos[]>([]);
   const { email } = loginRequest;
+  const navigation = useNavigation<NativeStackNavigationProp<any>>();
 
   if (!email) {
     console.log('email is empty');
@@ -32,6 +35,7 @@ const ApiDummy: FC<ApiDummyProps> = ({
   return (
     <View style={styles.container}>
       <Button title="Press me" onPress={() => handleRequest()} />
+      <Button title="Back" onPress={() => () => navigation.goBack()} />
       {photos && <ApiDummyList photosArray={photos} />}
     </View>
   );
