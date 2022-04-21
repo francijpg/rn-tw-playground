@@ -1,5 +1,5 @@
 import { Platform, StyleSheet } from 'react-native';
-import { Colors } from '../../../assets/colors';
+import Theme from '../../../infraestructure/theme';
 import { PlatformStr } from '../../../assets/string';
 
 const styles = (isPressed: boolean) =>
@@ -17,8 +17,8 @@ const styles = (isPressed: boolean) =>
         Platform.OS === PlatformStr.IOS
           ? 'transparent'
           : isPressed
-          ? Colors.COLOR_PRINCIPAL_95
-          : Colors.COLOR_PRINCIPAL,
+          ? Theme.colors().COLOR_PRINCIPAL_95
+          : Theme.colors().COLOR_PRINCIPAL,
     },
     text: {
       fontSize: 16,
@@ -28,9 +28,9 @@ const styles = (isPressed: boolean) =>
       color:
         Platform.OS === PlatformStr.IOS
           ? isPressed
-            ? Colors.COLOR_WHITE
-            : Colors.COLOR_PRINCIPAL
-          : Colors.COLOR_WHITE,
+            ? Theme.colors().COLOR_WHITE
+            : Theme.colors().COLOR_PRINCIPAL
+          : Theme.colors().COLOR_WHITE,
     },
   });
 

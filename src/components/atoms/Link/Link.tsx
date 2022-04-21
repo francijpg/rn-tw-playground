@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Linking, Text, StyleSheet } from 'react-native';
-import { Colors } from '../../../assets/colors';
+import Theme from '../../../infraestructure/theme';
 
 interface LinkProps {
   text: String;
@@ -18,7 +18,7 @@ const Link: FC<LinkProps> = ({ text, url, style }) => {
 
 const styles = StyleSheet.create({
   link: {
-    color: Colors.COLOR_PRINCIPAL,
+    color: Theme.colors().COLOR_PRINCIPAL,
   },
 });
 
