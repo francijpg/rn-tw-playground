@@ -2,5 +2,7 @@
   "LOGIN_HEADER_TITLE": "Bienvenido!",
   "LOGIN_EMAIL_LABEL": "Correo Electrónico",
   "LOGIN_PASSWORD_LABEL": "Contraseña",
-  "SUBMIT_BUTTON_TEXT": "Iniciar sesión"
+  "SUBMIT_BUTTON_TEXT": "Iniciar sesión",
+  "FORGOT_PASS" : "Olvidaste tu password?",
+  "CREATE_ACCOUNT":"Crear una cuenta"
 }
