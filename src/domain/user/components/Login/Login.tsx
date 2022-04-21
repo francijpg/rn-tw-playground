@@ -2,20 +2,22 @@ import React, { useState } from 'react';
 import { View } from 'react-native';
 import { Checkbox } from 'react-native-paper';
 import { Colors } from '../../../../assets/colors';
-import { Strings } from '../../../../assets/string';
+import { RoutesStr, Strings } from '../../../../assets/string';
 import CustomButton from '../../../../components/molecules/CustomButton';
 import Link from '../../../../components/atoms/Link';
 import TextInputIcon from '../../../../components/molecules/TextImputIcon/TextInputIcon';
 import dictionary from '../../../../language/es/login.json';
 import styles from './Login.style';
 import LoginHeader from '../../../../components/organisms/LoginHeader/LoginHeader';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 const Login = () => {
   const [email, setEmail] = useState({ value: '', error: '' });
   const [password, setPassword] = useState({ value: '', error: '' });
 
   const URL = 'https://google.com';
-
+  const navigation = useNavigation<NativeStackNavigationProp<any>>();
   return (
     <View style={styles.page}>
       <LoginHeader />
@@ -48,7 +50,10 @@ const Login = () => {
           />
           <Link url={URL} text={Strings.FORGOT_PASS} style={styles.link} />
         </View>
-        <CustomButton title={dictionary.SUBMIT_BUTTON_TEXT} />
+        <CustomButton
+          title={dictionary.SUBMIT_BUTTON_TEXT}
+          onPressFunction={() => navigation.navigate(RoutesStr.API_SCREEN)}
+        />
       </View>
     </View>
   );
