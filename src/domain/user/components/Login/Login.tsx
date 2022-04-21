@@ -18,6 +18,16 @@ const Login = () => {
 
   const URL = 'https://google.com';
   const navigation = useNavigation<NativeStackNavigationProp<any>>();
+  const goToApi = () => {
+    navigation.reset({
+      index: 0,
+      routes: [
+        {
+          name: RoutesStr.API_SCREEN,
+        },
+      ],
+    });
+  };
   return (
     <View style={styles.page}>
       <LoginHeader />
@@ -52,7 +62,7 @@ const Login = () => {
         </View>
         <CustomButton
           title={dictionary.SUBMIT_BUTTON_TEXT}
-          onPressFunction={() => navigation.navigate(RoutesStr.API_SCREEN)}
+          onPressFunction={() => goToApi()}
         />
       </View>
     </View>
