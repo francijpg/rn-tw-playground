@@ -1,35 +1,42 @@
 import { StyleSheet } from 'react-native';
-import { Colors } from '../../../../assets/colors';
 
 const styles = StyleSheet.create({
   passwordContainer: {
+    display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
-    marginTop: 10,
     justifyContent: 'space-between',
+  },
+  createAccountContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'center',
+    marginTop: 20,
     marginBottom: 20,
   },
   page: {
     height: '100%',
   },
-  upperContainer: {
-    flexDirection: 'column',
-    height: '40%',
-    width: '100%',
-    backgroundColor: Colors.COLOR_PRINCIPAL,
-  },
   container: {
     flex: 1,
     alignItems: 'stretch',
-    margin: 20,
+    marginVertical: 10,
+    marginHorizontal: 30,
     paddingHorizontal: 10,
   },
-  link: {
-    fontSize: 14,
+  passwordText: {
+    fontSize: 13,
+  },
+  inputText: {
+    marginTop: 15,
+  },
+  createAccount: {
+    marginRight: 10,
+    fontSize: 12,
   },
   checkbox: {
-    fontSize: 14,
+    paddingLeft: 0,
   },
 });
 
