@@ -34,7 +34,7 @@ const ApiDummy: FC<ApiDummyProps> = ({
 
   return (
     <View style={styles.container}>
-      <Button title="Press me" onPress={() => handleRequest()} />
+      <Button title="Call API" onPress={() => handleRequest()} />
       <Button title="Back" onPress={() => () => navigation.goBack()} />
       {photos && <ApiDummyList photosArray={photos} />}
     </View>
