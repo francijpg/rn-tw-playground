@@ -2,7 +2,7 @@
 // import { mockResponse } from '../../../test/mocks/ApiDummyMock';
 import { NavigationContainer } from '@react-navigation/native';
 // import { screen } from '@testing-library/dom';
-import { render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import React from 'react';
 import ApiDummy from './ApiDummy';
 
@@ -10,16 +10,18 @@ import ApiDummy from './ApiDummy';
 const loginRequest = { email: 'hello@tw.com', password: '123456' };
 
 describe('ApiDummy integration test', () => {
-  it('should ', () => {
-    const wrapper = render(
+  it('should be exist a button and when it is clicked it should display a list of data from the api', async () => {
+    const component = (
       <NavigationContainer>
         <ApiDummy loginRequest={loginRequest} />
-      </NavigationContainer>,
+      </NavigationContainer>
     );
-    // const textButtom = screen.findByText(/call api/i);
-    const textButtom = wrapper.getByText(/call api/i);
-    // expect(textButtom).toBeInTheDocument();
-    expect(textButtom).toBeTruthy();
+    const { findByText } = render(component);
+    const buttom = await findByText(/call api/i);
+
+    expect(buttom).toBeTruthy();
+
+    fireEvent(buttom, 'press');
   });
 
   // it('should return a 200 status code when API return values successfully', async () => {
