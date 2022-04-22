@@ -1,4 +1,4 @@
-const mockResponse = {
+export const mockResponse = {
   data: {
     results: [
       {
