@@ -55,6 +55,12 @@
     "baseUrl": ".",
     "paths": {
       "@src/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@entities/*": ["./src/entities/*"]
+      // "src/*": ["./src/*"],
+      // "components/*": ["./src/components/*"],
+      // "services/*": ["./src/services/*"],
+      // "entities/*": ["./src/entities/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],

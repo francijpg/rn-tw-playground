@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import Theme from '../../../infraestructure/theme';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Label from '../../atoms/Label/Label';
+import Label from '../../atoms/Label';
 
 type TextInputIconProps = TextInputProps & { icon: string; title: string };
 
