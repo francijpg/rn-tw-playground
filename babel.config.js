@@ -10,5 +10,17 @@ module.exports = {
         allowUndefined: true,
       },
     ],
+    [
+      'module-resolver',
+      {
+        root: ['./src'],
+        extensions: ['.ts', '.tsx', '.jsx', '.js', '.json'],
+        alias: {
+          '@components': './src/components',
+          '@services': './src/services',
+          '@entities': './src/entities',
+        },
+      },
+    ],
   ],
 };

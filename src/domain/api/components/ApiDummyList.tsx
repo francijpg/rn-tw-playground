@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
 import { Image, Text, ScrollView, View } from 'react-native';
-import Label from '../../../components/atoms/Label/Label';
-import { ApiDummyPhotos } from '../../../entities/ApiDummy';
 import styles from './ApiDummy.style';
+import Label from '@src/components/atoms/Label/Label';
+// import Label from '../../../components/atoms/Label/Label';
+import { ApiDummyPhotos } from '@src/entities/ApiDummy';
+// import { ApiDummyPhotos } from 'src/entities/ApiDummy';
 
 type Props = {
   photosArray: ApiDummyPhotos[];

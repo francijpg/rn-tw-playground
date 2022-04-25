@@ -1,3 +1,6 @@
+const { pathsToModuleNameMapper } = require('ts-jest/utils');
+const { compilerOptions } = require('./tsconfig');
+
 module.exports = {
   preset: 'react-native',
   testEnvironment: 'node',
@@ -15,4 +18,6 @@ module.exports = {
       statements: 80,
     },
   },
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths),
+  modulePaths: ['<rootDir>'],
 };
