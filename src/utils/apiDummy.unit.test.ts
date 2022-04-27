@@ -1,6 +1,6 @@
 import request from 'supertest';
 import { REACT_APP_DUMMY_API } from '@env';
-import { mockResponse } from '../test/mocks/ApiDummyMock';
+import { mockResponse } from '../../tests/mocks/ApiDummyMock';
 
 const baseUrl = `${REACT_APP_DUMMY_API}`;
 
