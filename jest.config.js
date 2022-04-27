@@ -1,4 +1,4 @@
-const { pathsToModuleNameMapper } = require('ts-jest/utils');
+const { pathsToModuleNameMapper } = require('ts-jest');
 const { compilerOptions } = require('./tsconfig');
 
 module.exports = {
@@ -6,10 +6,10 @@ module.exports = {
   testEnvironment: 'node',
   globals: {
     'ts-jest': {
-      tsconfig: './tsconfig.jest.json',
+      tsconfig: './tests/config/tsconfig.jest.json',
     },
   },
-  setupFilesAfterEnv: ['./src/jest.setup.ts'],
+  setupFilesAfterEnv: ['./tests/config/jest.setup.ts'],
   coverageThreshold: {
     global: {
       branches: 80,
